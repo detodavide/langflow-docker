@@ -1,4 +1,4 @@
-FROM langflowai/langflow:latest
+FROM langflowai/langflow:1.0.14
 
 # Switch to root to install build tools and system dependencies
 USER root
@@ -15,6 +15,8 @@ USER user
 WORKDIR /app
 
 # Set environment variables
+ENV PYTHONUNBUFFERED=true
+ENV DO_NOT_TRACK=true
 ENV LANGFLOW_AUTO_LOGIN=false
 ENV LANGFLOW_SUPERUSER=admin
 ENV LANGFLOW_SUPERUSER_PASSWORD=password
